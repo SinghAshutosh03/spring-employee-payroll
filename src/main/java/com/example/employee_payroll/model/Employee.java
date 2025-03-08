@@ -1,12 +1,18 @@
 package com.example.employee_payroll.model;
 
 import com.example.employee_payroll.dto.EmployeeDTO;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "employees")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) // Avoids serialization issues
+@Getter  // ✅ Generates Getter Methods
+@Setter  // ✅ Generates Setter Methods
+@NoArgsConstructor  // ✅ Default Constructor (Required by Hibernate)
+@AllArgsConstructor  // ✅ Constructor with All Fields
 public class Employee {
 
     @Id
@@ -16,39 +22,9 @@ public class Employee {
     private String name;
     private int salary;
 
-    // Default Constructor (Required by Hibernate)
-    public Employee() {
-    }
-
-    // Constructor to initialize Employee from DTO
+    // Constructor to initialize Employee from EmployeeDTO
     public Employee(EmployeeDTO employeeDTO) {
         this.name = employeeDTO.getName();
         this.salary = employeeDTO.getSalary();
-    }
-
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
     }
 }

@@ -1,0 +1,35 @@
+2025-03-08T22:39:35.453+05:30  INFO 16668 --- [restartedMain] c.e.e.EmployeePayrollApplication         : Starting EmployeePayrollApplication using Java 17.0.5 with PID 16668 (C:\Users\Ashutosh\Desktop\BL_capgemini\employee\employee-payroll\target\classes started by Ashutosh in C:\Users\Ashutosh\Desktop\BL_capgemini\employee\employee-payroll)
+2025-03-08T22:39:35.456+05:30 DEBUG 16668 --- [restartedMain] c.e.e.EmployeePayrollApplication         : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-08T22:39:35.457+05:30  INFO 16668 --- [restartedMain] c.e.e.EmployeePayrollApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-03-08T22:39:35.517+05:30  INFO 16668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-08T22:39:35.518+05:30  INFO 16668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-08T22:39:36.233+05:30  INFO 16668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-08T22:39:36.306+05:30  INFO 16668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interface.
+2025-03-08T22:39:36.659+05:30  WARN 16668 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-03-08T22:39:36.697+05:30  INFO 16668 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-03-08T22:39:37.107+05:30  INFO 16668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-03-08T22:39:37.126+05:30  INFO 16668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-08T22:39:37.126+05:30  INFO 16668 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-08T22:39:37.178+05:30  INFO 16668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-08T22:39:37.178+05:30  INFO 16668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1660 ms
+2025-03-08T22:39:37.424+05:30  INFO 16668 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-08T22:39:37.513+05:30  INFO 16668 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.3.Final
+2025-03-08T22:39:37.516+05:30  INFO 16668 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-03-08T22:39:37.688+05:30  INFO 16668 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-03-08T22:39:37.825+05:30  INFO 16668 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-08T22:39:37.846+05:30  INFO 16668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-08T22:39:38.169+05:30  INFO 16668 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ece1c6
+2025-03-08T22:39:38.171+05:30  INFO 16668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-08T22:39:38.213+05:30  WARN 16668 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-03-08T22:39:38.445+05:30  INFO 16668 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-03-08T22:39:38.990+05:30  INFO 16668 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-08T22:39:39.038+05:30  INFO 16668 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-08T22:39:39.317+05:30  WARN 16668 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-08T22:39:39.375+05:30  INFO 16668 --- [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-03-08T22:39:39.817+05:30  INFO 16668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-03-08T22:39:39.875+05:30  INFO 16668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-03-08T22:39:39.887+05:30  INFO 16668 --- [restartedMain] c.e.e.EmployeePayrollApplication         : Started EmployeePayrollApplication in 4.94 seconds (process running for 5.38)
+2025-03-08T22:40:03.032+05:30  INFO 16668 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-08T22:40:03.033+05:30  INFO 16668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-08T22:40:03.034+05:30  INFO 16668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-03-08T22:40:03.192+05:30  INFO 16668 --- [http-nio-8080-exec-2] c.e.e.service.EmployeeService            : Saving new employee: Charlie
