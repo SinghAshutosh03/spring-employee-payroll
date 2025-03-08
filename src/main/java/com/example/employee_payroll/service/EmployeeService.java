@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -15,7 +14,7 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    // Fetch all employees
+    // Fetch all employees from MySQL
     public List<EmployeeDTO> getAllEmployees() {
         List<Employee> employees = employeeRepository.findAll();
         return employees.stream()
@@ -30,13 +29,13 @@ public class EmployeeService {
         return new EmployeeDTO(employee.getName(), employee.getSalary());
     }
 
-    // Save a new employee
+    // Save employee to MySQL
     public Employee saveEmployee(EmployeeDTO employeeDTO) {
         Employee employee = new Employee(employeeDTO);
         return employeeRepository.save(employee);
     }
 
-    // Update existing employee
+    // Update employee in MySQL
     public Employee updateEmployee(Long id, EmployeeDTO employeeDTO) {
         Employee existingEmployee = employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
@@ -45,7 +44,7 @@ public class EmployeeService {
         return employeeRepository.save(existingEmployee);
     }
 
-    // Delete employee
+    // Delete employee from MySQL
     public void deleteEmployee(Long id) {
         if (!employeeRepository.existsById(id)) {
             throw new RuntimeException("Employee not found with id: " + id);
