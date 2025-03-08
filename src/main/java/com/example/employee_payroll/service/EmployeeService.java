@@ -1,34 +1,3 @@
-//package com.example.employee_payroll.service;
-//import com.example.employee_payroll.model.Employee;
-//import com.example.employee_payroll.repository.EmployeeRepository;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//import java.util.List;
-//import java.util.Optional;
-//
-//@Service
-//public class EmployeeService {
-//
-//    @Autowired
-//    private EmployeeRepository employeeRepository;
-//
-//    public List<Employee> getAllEmployees() {
-//        return employeeRepository.findAll();
-//    }
-//
-//    public Optional<Employee> getEmployeeById(Long id) {
-//        return employeeRepository.findById(id);
-//    }
-//
-//    public Employee saveEmployee(Employee employee) {
-//        return employeeRepository.save(employee);
-//    }
-//
-//    public void deleteEmployee(Long id) {
-//        employeeRepository.deleteById(id);
-//    }
-//}
 package com.example.employee_payroll.service;
 
 import com.example.employee_payroll.dto.EmployeeDTO;
@@ -47,14 +16,18 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     // Fetch all employees
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll();
+    public List<EmployeeDTO> getAllEmployees() {
+        List<Employee> employees = employeeRepository.findAll();
+        return employees.stream()
+                .map(emp -> new EmployeeDTO(emp.getName(), emp.getSalary()))
+                .toList();
     }
 
     // Fetch employee by ID
-    public Employee getEmployeeById(Long id) {
-        return employeeRepository.findById(id)
+    public EmployeeDTO getEmployeeById(Long id) {
+        Employee employee = employeeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+        return new EmployeeDTO(employee.getName(), employee.getSalary());
     }
 
     // Save a new employee
@@ -65,7 +38,8 @@ public class EmployeeService {
 
     // Update existing employee
     public Employee updateEmployee(Long id, EmployeeDTO employeeDTO) {
-        Employee existingEmployee = getEmployeeById(id);
+        Employee existingEmployee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
         existingEmployee.setName(employeeDTO.getName());
         existingEmployee.setSalary(employeeDTO.getSalary());
         return employeeRepository.save(existingEmployee);
@@ -73,6 +47,9 @@ public class EmployeeService {
 
     // Delete employee
     public void deleteEmployee(Long id) {
+        if (!employeeRepository.existsById(id)) {
+            throw new RuntimeException("Employee not found with id: " + id);
+        }
         employeeRepository.deleteById(id);
     }
 }
