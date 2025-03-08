@@ -33,3 +33,5 @@
 2025-03-08T22:40:03.033+05:30  INFO 16668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-03-08T22:40:03.034+05:30  INFO 16668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2025-03-08T22:40:03.192+05:30  INFO 16668 --- [http-nio-8080-exec-2] c.e.e.service.EmployeeService            : Saving new employee: Charlie
+2025-03-08T22:40:44.192+05:30  INFO 16668 --- [http-nio-8080-exec-3] c.e.e.service.EmployeeService            : Fetching employee with ID: 1
+2025-03-08T22:40:49.648+05:30  INFO 16668 --- [http-nio-8080-exec-4] c.e.e.service.EmployeeService            : Fetching employee with ID: 8
